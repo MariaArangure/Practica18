@@ -1,0 +1,59 @@
+.fondo{
+	margin-top: 35%;
+	width: 75%;
+	margin-bottom: 10%;
+}
+.imagen{
+	height: 100%;
+	width: 100%;
+	margin-top: 13%;
+	margin-bottom: 5px;
+}
+.imagen2{
+	width: 100%;
+	margin-top: 5%;
+	margin-bottom: 5px;
+}
+.imagen3{
+	margin-left: 5%;
+}
+.margen{
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+.margen2{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.centrar{
+	margin-bottom: 10px;
+}
+.formulario{
+	margin-top: 10%;
+	border: 1px;
+	border-color: #CCCCCC;
+	margin-bottom: 5px;
+}
+.formulario2{
+	margin-top: 60%;
+	border: 1px;
+	border-color: #CCCCCC;
+	margin-bottom: 5px;
+}
+.boton{
+	margin-top: 5px;
+}
+.texto{
+	font-size: 10pt;
+	font-family: Arial;
+}
+.texto2{
+	font-size: 9pt;
+	font-family: Arial;
+	font-color: #CCCCCC;
+}
+.margenboton{
+	margin-right: 5px;
+}
