@@ -76,8 +76,8 @@
                 else
                 {
                     Lungo.Notification.error(
-                        "Login", //titulo
-                        "Error Usuario o Contraseña Incorrectos", //descripcion
+                        "Error", //titulo
+                        "Usuario o Contraseña Incorrectos", //descripcion
                         "remove", //icono
                         2
                         );
@@ -85,14 +85,38 @@
             //}
             //Lungo.Service.post(url,data,respuesta);
         });
+
+            Lungo.dom('#inicia').on('click',function(event){
+                var nombre=$$("#nc").val();
+                var telefono=$$("#tel").val();
+                var usu=$$("#usu").val();
+                var contra=$$("#contra").val();
+
+                //var url="http://localhost/diplomado/Proyecto/Usuarios.php";
+                //var data={Usuario:usuario,Password:password};
+                //var respuesta=function(resultado){
+                if(nombre=='' && telefono=='' && usu=='' & contra=='')
+                {
+                    Lungo.Notification.error(
+                        "Error", //titulo
+                        "Llena todos los campos", //descripcion
+                        "remove", //icono
+                        2
+                        );
+                }
+                else
+                {
+                    Lungo.Router.section("seccion3"); 
+                }
+            //}
+            //Lungo.Service.post(url,data,respuesta);
+        });
+
         Lungo.dom('#refrescos').on('change',function(event){
             Lungo.Router.section("seccion7"); 
         });
         Lungo.dom('#aguas').on('change',function(event){
             Lungo.Router.section("seccion7"); 
-        });
-        Lungo.dom('#mas').on('click',function(event){
-            alert("hola"); 
         });    
         </script>
         </body>
