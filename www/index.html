@@ -31,9 +31,6 @@
         <link rel="stylesheet" href="css/hoja.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
 
-        <!-- Script -->
-        <script src="js/quo.js"></script>
-        <script src="js/lungo.js"></script>
         <title></title>
     </head>
         <body>
@@ -42,16 +39,19 @@
                 <img src="./img/Logo1.png" class="fondo">
                 <div class="formulario form">
                         <fieldset class="radius-top" data-icon="user">
-                            <input type="text" placeholder="Nombre de usuario" value>
+                            <input id="txtusuario" type="text" placeholder="Nombre de usuario">
                         </fieldset>
                         <fieldset class="radius-bottom shadow" data-icon="lock">
-                            <input type="password" placeholder="escribe tu contraseña" value>
+                            <input id="txtpassword" type="password" placeholder="escribe tu contraseña">
                         </fieldset>
-                        <button class="anchor" data-label="Iniciar sesión" data-view-section="seccion3"></button>
+                        <button id="botonentrar" class="anchor" data-label="Iniciar sesión"></button>
                         <button class="button" data-icon="user" data-label="Registrarse" data-view-section="seccion2"></button>
                 </div>      
             </article>
         </section>
+        <!-- Script -->
+        <script src="js/quo.js"></script>
+        <script src="js/lungo.js"></script>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
@@ -61,32 +61,36 @@
                      resources: ['seccion2.html','seccion3.html','seccion4.html','seccion5.html','seccion6.html','seccion7.html','platillo.html','guarniciones.html','postres.html','bebidas.html','seccion8.html']
                 });
 
-            Lungo.dom('#btentrar').on('click',
-                function(event){
-                    var usuario=$$("#txtusuario").val();
-                    var password=$$("#txtpassword").val();
-                });
 
+            Lungo.dom('#botonentrar').on('click',function(event){
+                var usuario=$$("#txtusuario").val();
+                var password=$$("#txtpassword").val();
 
-            var url="http://localhost/diplomado/Proyecto/Usuarios.php";
-            var data={Usuario:usuario,Password:password};
-            var respuesta=function(resultado){
-                if(resultado=="Usuario encontrado")
+                //var url="http://localhost/diplomado/Proyecto/Usuarios.php";
+                //var data={Usuario:usuario,Password:password};
+                //var respuesta=function(resultado){
+                if(usuario=='admin' && password=='1234')
                 {
-                    Lungo.Router.section("seccion3");
+                    Lungo.Router.section("seccion3"); 
                 }
                 else
                 {
                     Lungo.Notification.error(
-                        "Error", //title
-                        "Usuario o password incorrectos", //description
-                        "remove", //icon
-                        3 //tiempo
+                        "Login", //titulo
+                        "Error Usuario o Contraseña Incorrectos", //descripcion
+                        "remove", //icono
+                        3
                         );
                 }
-            }
-
-            Lungo.Service.post(url,data,respuesta);
+            //}
+            //Lungo.Service.post(url,data,respuesta);
+        });
+        Lungo.dom('#refrescos').on('change',function(event){
+            Lungo.Router.section("seccion7"); 
+        });
+        Lungo.dom('#aguas').on('change',function(event){
+            Lungo.Router.section("seccion7"); 
+        });
         </script>
         </body>
 </html>
