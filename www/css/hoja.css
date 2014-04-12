@@ -37,7 +37,7 @@
 	margin-bottom: 5px;
 }
 .formulario2{
-	margin-top: 60%;
+	margin-top: 5%;
 	border: 1px;
 	border-color: #CCCCCC;
 	margin-bottom: 5px;
@@ -62,4 +62,26 @@
 	margin-top: 35%;
 	margin-left: 5px;
 	margin-right: 5px;
+}
+.cubierto1{
+	width: 40%;
+	margin-top: 20%;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 20%;
+}
+.cubierto2{
+	width: 40%;
+	margin-top: 20%;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 25%;
+}
+.imagenfinal{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
