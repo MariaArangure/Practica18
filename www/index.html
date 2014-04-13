@@ -59,31 +59,42 @@
             var productos= new Array();
             var paquetes= new Array();
             var contadorpaquetes=0;
+            var contadorproductos=1000;
+            var contadorproducto=1000;
             Lungo.init({
                      name: 'hello-world',
                      resources: ['seccion2.html','seccion3.html','seccion4.html','seccion5.html','seccion6.html','seccion7.html','platillo.html','guarniciones.html','bebidas.html','seccion8.html','lista.html']
                 });
 
-            Lungo.dom('#lista').on('load',function(event){
-            $$('#listaCompra').empty();
+        Lungo.dom('#lista').on('load',function(event){
             for(var paquete in paquetes)
-            {
+            {   
+                
                 $$('#listaCompra').append('<li class="thumb big">'+ paquetes[paquete]+'</li>');
             }
             for(var producto in productos)
             {
-                $$('#listaCompra').append('<li class="thumb big">'+ productos[producto]+'</li>');
+                contadorproducto++;
+                $$('#listaCompra').append('<li class="thumb big" id="fila'+contadorproducto+'">'+ productos[producto]+'</li>');
             }
+            productos.length=0;
         });
 
         function AgregarCarrito(fila) {
-            productos.push($$('#'+fila).html());
+            contadorproductos++;
+            var reemplazo=$$('#'+fila).html();
+            var filaid= reemplazo.replace("AgregarCarrito","BorrarCarrito");
+            var signo=filaid.replace("icon plus","icon minus");
+            var filanueva=signo.replace(fila,"fila"+contadorproductos);
+            productos.push(filanueva);
         }
         function AgregarPaquete() {
             contadorpaquetes++;
             productos.push("Paquete "+contadorpaquetes);
         }
-
+        function BorrarCarrito(fila){
+            $$('#'+fila).empty();
+        }
 
             Lungo.dom('#botonentrar').on('click',function(event){
                 var usuario=$$("#txtusuario").val();
