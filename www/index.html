@@ -56,10 +56,33 @@
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+            var productos= new Array();
+            var paquetes= new Array();
+            var contadorpaquetes=0;
             Lungo.init({
                      name: 'hello-world',
-                     resources: ['seccion2.html','seccion3.html','seccion4.html','seccion5.html','seccion6.html','seccion7.html','platillo.html','guarniciones.html','bebidas.html','seccion8.html']
+                     resources: ['seccion2.html','seccion3.html','seccion4.html','seccion5.html','seccion6.html','seccion7.html','platillo.html','guarniciones.html','bebidas.html','seccion8.html','lista.html']
                 });
+
+            Lungo.dom('#lista').on('load',function(event){
+            $$('#listaCompra').empty();
+            for(var paquete in paquetes)
+            {
+                $$('#listaCompra').append('<li class="thumb big">'+ paquetes[paquete]+'</li>');
+            }
+            for(var producto in productos)
+            {
+                $$('#listaCompra').append('<li class="thumb big">'+ productos[producto]+'</li>');
+            }
+        });
+
+        function AgregarCarrito(fila) {
+            productos.push($$('#'+fila).html());
+        }
+        function AgregarPaquete() {
+            contadorpaquetes++;
+            productos.push("Paquete "+contadorpaquetes);
+        }
 
 
             Lungo.dom('#botonentrar').on('click',function(event){
@@ -117,7 +140,8 @@
         });
         Lungo.dom('#aguas').on('change',function(event){
             Lungo.Router.section("seccion7"); 
-        });    
+        });
+
         </script>
         </body>
 </html>

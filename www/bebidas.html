@@ -13,7 +13,7 @@
             <a href="#" data-view-section="bebidas" data-icon="food">BEBIDAS</a>
             <a href="#" data-icon="remove">QUITAR</a>
           </nav>
-    <article id="bebidas" class="list" align="on-left">
+    <article id="bebidas" class="list" align="center">
       <ul class="scroll" style="height: 75%;">
         <li class="thumb big" id="fila19">
           <img src="./img/b1.png">
@@ -34,7 +34,7 @@
                     </select>
                   </label>
               </fieldset>
-            <button class="button" data-icon="plus"></button>
+            <button class="button" data-icon="plus" onclick="AgregarCarrito('fila19')"></button>
             </div>
         </li>
         <li class="thumb big" id="fila20">
@@ -55,7 +55,7 @@
                     </select>
                   </label>
               </fieldset>
-            <button class="button" data-icon="plus"></button>
+            <button class="button" data-icon="plus" onclick="AgregarCarrito('fila20')"></button>
             </div>
         </li>
         <li class="thumb big" id="fila21">
@@ -65,19 +65,7 @@
               <small>Precio botella $8</small>
             </div>
             <div class="anchor">
-              <fieldset>
-                  <label class="select">
-                    <select>
-                      <option value="1"> -- </option>
-                      <option value="2"> 1 </option>
-                      <option value="3"> 2 </option>
-                      <option value="4"> 3 </option>
-                      <option value="5"> 4 </option>
-                      <option value="6"> 5 </option>
-                    </select>
-                  </label>
-              </fieldset>
-            <button class="button" data-icon="plus"></button>
+            <button class="button" data-icon="plus" onclick="AgregarCarrito('fila21')"></button>
             </div>
         </li>
       </ul>
@@ -85,7 +73,7 @@
     <footer>
             <nav>
               <a href="#" data-icon="arrow-left" data-view-section="seccion3"></a>
-              <a href="#" data-icon="menu"></a>
+              <a href="#" data-icon="menu" data-view-section="lista"></a>
               <a href="#" data-icon="ok-sign" data-view-section="seccion8"></a>
             </nav>
     </footer> 
